@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0B0F14;
+  color: #E6EDF3;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F14;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A3441;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3ECF8E;
+}
+
+/* Code and mono accents */
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Stroke drawing animation classes */
+.draw-path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawIn 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawIn {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Pulsing packet animation along SVG path */
+@keyframes flowPacket {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+/* Subtle circuit grid background */
+.circuit-grid {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(42, 52, 65, 0.4) 1px, transparent 1px);
+}
+
+/* Ethereal smoky plume animations */
+@keyframes smokeBillow1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    opacity: 0.7;
+    filter: blur(24px);
+  }
+  33% {
+    transform: translate(-16px, -20px) scale(1.2) rotate(4deg);
+    opacity: 0.95;
+    filter: blur(30px);
+  }
+  66% {
+    transform: translate(12px, -14px) scale(1.08) rotate(-3deg);
+    opacity: 0.8;
+    filter: blur(22px);
+  }
+}
+
+@keyframes smokeBillow2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    opacity: 0.65;
+    filter: blur(26px);
+  }
+  50% {
+    transform: translate(22px, -18px) scale(1.24) rotate(-5deg);
+    opacity: 0.95;
+    filter: blur(34px);
+  }
+}
+
+@keyframes smokeBillow3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.6;
+    filter: blur(22px);
+  }
+  50% {
+    transform: translate(-16px, 18px) scale(1.22) rotate(3deg);
+    opacity: 0.9;
+    filter: blur(32px);
+  }
+}
+
+.animate-smoke-1 {
+  animation: smokeBillow1 8s ease-in-out infinite;
+}
+
+.animate-smoke-2 {
+  animation: smokeBillow2 11s ease-in-out infinite alternate;
+}
+
+.animate-smoke-3 {
+  animation: smokeBillow3 9s ease-in-out infinite alternate;
+}
