@@ -13,6 +13,9 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
+  const currentRole = personalInfo.roles[roleIndex];
+  const article = /^[AEIOUaeiou]/.test(currentRole) ? 'an' : 'a';
+
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -43,9 +46,9 @@ export default function Hero() {
             
             {/* Dynamic Rotating Role Headline */}
             <div className="flex items-center gap-2 min-h-[42px]">
-              <span className="text-lg sm:text-xl font-medium text-[#8B96A5]">I am a</span>
+              <span className="text-lg sm:text-xl font-medium text-[#8B96A5]">I am {article}</span>
               <span className="font-heading text-xl sm:text-3xl font-bold text-[#E6EDF3] border-b-2 border-[#3ECF8E] pb-0.5 transition-all duration-300">
-                {personalInfo.roles[roleIndex]}
+                {currentRole}
               </span>
             </div>
           </div>

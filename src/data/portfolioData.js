@@ -2,10 +2,11 @@ export const personalInfo = {
   name: "Rajyalakshmi Devarala",
   nickname: "Raji",
   roles: [
+    "Java Developer",
     "Java Full-Stack Developer",
+    "Associate Software Developer",
     "Backend Developer",
     "Software Developer",
-    "Associate Software Developer",
     "Spring Boot Engineer"
   ],
   bio: "Software developer with hands-on enterprise experience in building robust full-stack applications, scalable RESTful microservices, and reliable database architectures. Proficient in Java, Spring Boot, Spring Security, Hibernate, MySQL, and modern AI tools. Passionate about writing clean, maintainable code that solves real-world challenges.",
