@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Download, Menu, X, ArrowUpRight, FileText, ChevronDown, ExternalLink } from 'lucide-react';
 import { Github, Linkedin, LeetCode } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [resumeMenuOpen, setResumeMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,16 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setResumeMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -94,14 +106,82 @@ export default function Navbar() {
           >
             <Linkedin className="w-4 h-4" />
           </a>
-          <a
-            href={personalInfo.resumePdf}
-            download="Rajyalakshmi_Devarala_Resume.pdf"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#3ECF8E] to-[#2fb377] text-[#0B0F14] font-semibold text-xs tracking-wide hover:opacity-95 transition-all duration-200 shadow-glow-green"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Download CV</span>
-          </a>
+
+          {/* Open Resume Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              type="button"
+              onClick={() => setResumeMenuOpen(!resumeMenuOpen)}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#3ECF8E] to-[#2fb377] text-[#0B0F14] font-semibold text-xs tracking-wide hover:opacity-95 transition-all duration-200 shadow-glow-green cursor-pointer select-none"
+              aria-expanded={resumeMenuOpen}
+              aria-haspopup="true"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Open Resume</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resumeMenuOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Dropdown Menu */}
+            {resumeMenuOpen && (
+              <div className="absolute right-0 mt-2 w-60 rounded-2xl bg-[#0F141C]/98 border border-[#2A3441] shadow-2xl backdrop-blur-xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#8B96A5]">
+                  Resume Options
+                </div>
+                
+                {/* Option 1: Open in new tab */}
+                <a
+                  href={personalInfo.resumePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setResumeMenuOpen(false)}
+                  className="flex items-center gap-3 w-full px-3 py-2.5 text-xs text-[#E6EDF3] hover:text-[#3ECF8E] hover:bg-[#182230] rounded-xl transition-all group"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-[#182230] group-hover:bg-[#3ECF8E]/20 flex items-center justify-center text-[#8B96A5] group-hover:text-[#3ECF8E] transition-colors">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="font-semibold text-xs text-[#E6EDF3] group-hover:text-[#3ECF8E]">Open in New Tab</span>
+                    <span className="text-[10px] text-[#8B96A5]">View directly in browser</span>
+                  </div>
+                </a>
+
+                {/* Option 2: Download PDF */}
+                <a
+                  href={personalInfo.resumePdf}
+                  download="Rajyalakshmi_Devarala_Resume.pdf"
+                  onClick={() => setResumeMenuOpen(false)}
+                  className="flex items-center gap-3 w-full px-3 py-2.5 text-xs text-[#E6EDF3] hover:text-[#3ECF8E] hover:bg-[#182230] rounded-xl transition-all group mt-1"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-[#182230] group-hover:bg-[#3ECF8E]/20 flex items-center justify-center text-[#8B96A5] group-hover:text-[#3ECF8E] transition-colors">
+                    <Download className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="font-semibold text-xs text-[#E6EDF3] group-hover:text-[#3ECF8E]">Download PDF</span>
+                    <span className="text-[10px] text-[#8B96A5]">Save copy to device</span>
+                  </div>
+                </a>
+
+                {/* Option 3: Google Drive View */}
+                {personalInfo.resumeDrive && (
+                  <a
+                    href={personalInfo.resumeDrive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setResumeMenuOpen(false)}
+                    className="flex items-center gap-3 w-full px-3 py-2 text-xs text-[#8B96A5] hover:text-[#E6EDF3] hover:bg-[#182230] rounded-xl transition-all group mt-1 border-t border-[#1C2533] pt-2"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-[#182230] group-hover:bg-[#1E2C3D] flex items-center justify-center text-[#8B96A5] group-hover:text-[#E6EDF3] transition-colors">
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-medium text-[11px] text-[#8B96A5] group-hover:text-[#E6EDF3]">Google Drive</span>
+                      <span className="text-[9px] text-[#556375]">Cloud view</span>
+                    </div>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile menu toggle */}
@@ -127,19 +207,41 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <div className="flex items-center gap-2.5 pt-4">
-            <a
-              href={personalInfo.resumePdf}
-              download="Rajyalakshmi_Devarala_Resume.pdf"
-              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#3ECF8E] text-[#0B0F14] font-bold text-xs"
-            >
-              <Download className="w-4 h-4" />
-              Download Resume
-            </a>
+
+          {/* Mobile Resume Options */}
+          <div className="pt-4 space-y-2 border-t border-[#182230]">
+            <div className="text-[11px] font-semibold uppercase tracking-wider text-[#8B96A5] px-1">
+              Resume Options
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={personalInfo.resumePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#121821] border border-[#2A3441] text-[#3ECF8E] font-semibold text-xs hover:border-[#3ECF8E] transition-all"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Open in Tab</span>
+              </a>
+              <a
+                href={personalInfo.resumePdf}
+                download="Rajyalakshmi_Devarala_Resume.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#3ECF8E] to-[#2fb377] text-[#0B0F14] font-bold text-xs hover:opacity-95 transition-all shadow-glow-green"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 pt-2">
             <a
               href={personalInfo.profiles.leetcode}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LeetCode Profile"
               className="p-3 rounded-xl border border-[#2A3441] bg-[#121821] text-[#FFA116]"
             >
               <LeetCode className="w-4 h-4" />
@@ -148,6 +250,7 @@ export default function Navbar() {
               href={personalInfo.profiles.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="p-3 rounded-xl border border-[#2A3441] bg-[#121821] text-[#8B96A5]"
             >
               <Github className="w-4 h-4" />
@@ -156,6 +259,7 @@ export default function Navbar() {
               href={personalInfo.profiles.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="p-3 rounded-xl border border-[#2A3441] bg-[#121821] text-[#8B96A5]"
             >
               <Linkedin className="w-4 h-4" />
