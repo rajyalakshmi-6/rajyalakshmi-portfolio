@@ -14,7 +14,7 @@ export const personalInfo = {
   email: "devaralarajyalakshmi265@gmail.com",
   phone: "+91 8328175792",
   avatar: "/profile.jpg",
-  resumePdf: "/resume.pdf",
+  resumePdf: "/resume.pdf?v=20260906",
   resumeDrive: "https://drive.google.com/file/d/149WRpludCtDedpHqurtVGLfChE_4RFHG/view?usp=drivesdk",
   
   // All Verified Accounts & Profiles Hub
