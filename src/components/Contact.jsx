@@ -56,11 +56,11 @@ export default function Contact() {
               <MapPin className="w-5 h-5" />
             </div>
             <div className="space-y-1">
-              <div className="text-xs text-[#8B96A5] font-medium">Location & Relocation</div>
+              <div className="text-xs text-[#8B96A5] font-medium">Mobility & Relocation</div>
               <div className="text-sm font-bold text-[#E6EDF3]">
-                {personalInfo.location}
+                Open to Relocate Anywhere in India
               </div>
-              <div className="text-[11px] text-[#58A6FF] font-medium">Open to relocate / hybrid / remote</div>
+              <div className="text-[11px] text-[#3ECF8E] font-medium">Bengaluru, Hyderabad, Pune, Chennai, Delhi-NCR & Pan-India • Onsite / Hybrid / Remote</div>
             </div>
           </div>
 

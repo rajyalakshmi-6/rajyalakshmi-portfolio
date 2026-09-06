@@ -9,7 +9,8 @@ export const personalInfo = {
     "Spring Boot Engineer"
   ],
   bio: "Software developer with hands-on enterprise experience in building robust full-stack applications, scalable RESTful microservices, and reliable database architectures. Proficient in Java, Spring Boot, Spring Security, Hibernate, MySQL, and modern AI tools. Passionate about writing clean, maintainable code that solves real-world challenges.",
-  location: "Bengaluru, Karnataka, India",
+  location: "India • Open to Relocate Anywhere",
+  relocationPreference: "Ready to relocate anywhere across India (Bengaluru, Hyderabad, Pune, Chennai, Delhi-NCR, Mumbai & Pan-India) | Onsite, Hybrid & Remote",
   email: "devaralarajyalakshmi265@gmail.com",
   phone: "+91 8328175792",
   avatar: "/profile.jpg",

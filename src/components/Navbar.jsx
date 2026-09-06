@@ -107,7 +107,7 @@ export default function Navbar() {
             <Linkedin className="w-4 h-4" />
           </a>
 
-          {/* Open Resume Dropdown */}
+          {/* View Resume Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               type="button"
@@ -117,7 +117,7 @@ export default function Navbar() {
               aria-haspopup="true"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Open Resume</span>
+              <span>View Resume</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resumeMenuOpen ? 'rotate-180' : ''}`} />
             </button>
 

@@ -28,7 +28,7 @@ export default function Hero() {
             </span>
             <span className="text-[#2A3441]">|</span>
             <span className="text-xs text-[#8B96A5] flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-[#3ECF8E]" /> Bengaluru, India
+              <MapPin className="w-3 h-3 text-[#3ECF8E]" /> Open to Relocate Anywhere across India
             </span>
           </div>
 
