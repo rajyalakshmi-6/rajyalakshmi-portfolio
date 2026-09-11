@@ -97,9 +97,11 @@ export const skillsCategories = [
       { name: "Spring Data JPA", logo: "SpringBoot", level: "Data Layer" },
       { name: "Hibernate ORM", logo: "Hibernate", level: "ORM" },
       { name: "Jakarta Servlets & JSP", logo: "Java", level: "Web Layer" },
+      { name: "Apache Tomcat 10", logo: "Java", level: "Web Server" },
       { name: "RESTful APIs", logo: "Postman", level: "API Design" },
       { name: "JDBC & DAO", logo: "SQL", level: "Data Access" },
-      { name: "Spring Security & JWT", logo: "SpringBoot", level: "Security" }
+      { name: "Spring Security & JWT", logo: "SpringBoot", level: "Security" },
+      { name: "Brevo REST API", logo: "Postman", level: "Email Automation" }
     ]
   },
   {
@@ -107,6 +109,9 @@ export const skillsCategories = [
     description: "Relational and graph database systems, cloud infrastructure, and IoT streaming",
     skills: [
       { name: "MySQL", logo: "MySQL", level: "Relational DB" },
+      { name: "Aiven Cloud (SSL)", logo: "MySQL", level: "Managed MySQL" },
+      { name: "Docker", logo: "Linux", level: "Multi-Stage Build" },
+      { name: "Render Cloud", logo: "GoogleCloud", level: "PaaS Hosting" },
       { name: "Neo4j & Cypher", logo: "Neo4j", level: "Graph DB" },
       { name: "H2 Database", logo: "SQL", level: "In-Memory" },
       { name: "Google Cloud Platform", logo: "GoogleCloud", level: "Cloud Foundations" },
@@ -146,6 +151,86 @@ export const skillsCategories = [
 ];
 
 export const projects = [
+  {
+    id: "shelfbound",
+    title: "ShelfBound — Full-Stack E-Commerce & Bookstore Platform",
+    subtitle: "Layered MVC + DAO Architecture on Docker & Apache Tomcat 10 with MySQL 8.4 Aiven Cloud SSL",
+    category: "Full-Stack & E-Commerce",
+    featured: true,
+    fullWidth: true,
+    badge: "Live on Render • Multi-Stage Docker",
+    description: "A full-scale, production-ready enterprise e-commerce platform built from scratch without boilerplate templates. Features a layered MVC (Model-View-Controller) + DAO (Data Access Object) architecture deployed on Apache Tomcat 10 inside a multi-stage Docker container on Render, backed by a cloud-hosted MySQL 8.4 instance via Aiven Cloud SSL. Delivers end-to-end shopping workflows, automated Brevo transactional email OTP, and a dedicated role-secured admin command dashboard.",
+    metrics: [
+      { label: "Java Classes", value: "47" },
+      { label: "JSP Pages", value: "21" },
+      { label: "Relational Schema", value: "9 Tables (3NF)" },
+      { label: "BCrypt Security", value: "12 Salt Rounds" },
+      { label: "SQLi Hardening", value: "100% PreparedStmt" }
+    ],
+    featureGroups: [
+      {
+        title: "User Identity & Lifecycle Automation",
+        points: [
+          "Email OTP Verification: 6-digit numeric verification code dispatched to the customer’s inbox via the Brevo API with a live 5-minute client countdown timer before database commit.",
+          "BCrypt Password Security: Cryptographic one-way password hashing ($2a$12$, 12 salt rounds) with a backward-compatible auto-upgrade routine migrating legacy passwords upon login.",
+          "Self-Serve Password Reset: Automated email verification code flow allowing instant, secure password recovery without administrator intervention."
+        ]
+      },
+      {
+        title: "Customer Shopping Workflows",
+        points: [
+          "Real-Time Dynamic Search & Catalog: Live keyword catalog search powered by AJAX/Fetch API with zero page reloads.",
+          "Persistent Shopping Cart & Wishlist: Multi-item cart backed by normalized database tables, recalculating subtotals and discounts on the fly.",
+          "Quick 'Add to Cart': Instant cart actions across catalog cards triggering toast notifications and asynchronous cart quantity sync.",
+          "Dynamic Coupon Engine: Active promo modal (e.g., WELCOME20) with live threshold evaluation ('Add ₹125 more to avail 20% off') and single-click apply/remove.",
+          "Customer Hub: Smoky glassmorphism profile displaying live metrics for Orders, Wishlist, and Cart items."
+        ]
+      },
+      {
+        title: "Dedicated Role-Secured Admin Dashboard",
+        points: [
+          "Store Analytics: Live platform metrics tracking total users, books in stock, revenue, and pending fulfillment counts.",
+          "User Blocking Controls: Admin capability to block compromised or fraudulent user accounts with instant session denial.",
+          "Coupon & Promotion Management: Full CRUD interface for promotional campaigns with custom percentages, start/end dates, and duplicate prevention.",
+          "Order Lifecycle Fulfillment: Step-by-step order tracking (Pending → Confirmed → Shipped → Delivered) triggering automated Brevo email alerts to the customer."
+        ]
+      },
+      {
+        title: "Recruiter-Attractive Engineering Highlights",
+        points: [
+          "Scale of Implementation: Engineered with 47 Java classes, 21 JSP pages, 2 distinct role portals (Customer vs Admin), and a 9-table normalized (3NF) relational schema.",
+          "SQL Injection Prevention: 100% of database queries are executed via parameterized PreparedStatement with connection pooling, eliminating SQL injection risks.",
+          "Automated Transactional Emails: Integrated Brevo REST API to dispatch real-time order receipts, order status changes, and newsletter welcome coupons.",
+          "Independent Architecture: Engineered end-to-end without clones or boilerplate, including relational database modeling, payment/order state machines, and multi-stage Docker containerization on Render."
+        ]
+      }
+    ],
+    resumeBullets: [
+      "Architected & Deployed a production bookstore platform on Render using 47 Java classes, 21 JSP pages, and 2 role-secured portals, backed by a 9-table normalized MySQL database on Aiven Cloud SSL.",
+      "Implemented Security & Auth: Engineered BCrypt cryptographic password hashing (12 rounds) and Brevo REST API email OTP verification, featuring session management and role-based access control filters.",
+      "Optimized UX with AJAX: Built 6+ asynchronous Fetch/AJAX workflows for live catalog search, dynamic cart updates, and an automated coupon validation engine with real-time threshold calculations."
+    ],
+    highlights: [
+      "Architected with 47 Java classes, 21 JSP pages, 2 distinct role portals (Customer & Admin), and a 9-table normalized (3NF) relational MySQL schema on Aiven Cloud SSL.",
+      "Engineered BCrypt cryptographic password hashing (12 salt rounds) and Brevo REST API email OTP verification with a live 5-minute client countdown timer.",
+      "Built 6+ asynchronous Fetch/AJAX workflows for zero-reload catalog search, dynamic cart/wishlist sync, and an automated WELCOME20 coupon engine with live spend thresholds.",
+      "Dedicated Admin Command Dashboard featuring real-time store metrics, account blocking controls, coupon CRUD management, and 4-stage order lifecycle fulfillment.",
+      "Production deployment on Apache Tomcat 10 inside a multi-stage Docker container on Render, eliminating SQL injection risks via 100% parameterized PreparedStatements."
+    ],
+    stack: [
+      "Java (Core & OOP)", "Jakarta Servlets", "JSP & JSTL", "Expression Language (EL)",
+      "MySQL 8.4 (Aiven Cloud SSL)", "Raw JDBC & Connection Pooling", "DAO Pattern",
+      "Docker (Multi-Stage)", "Apache Tomcat 10", "Render Cloud",
+      "Brevo REST API", "BCrypt ($2a$12$)", "AJAX / Fetch API", "Smoky Glassmorphism UI"
+    ],
+    links: {
+      demo: "https://shelfbound-bookstore.onrender.com/",
+      github: "https://github.com/rajyalakshmi-6/ShelfBound",
+      video: "https://drive.google.com/file/d/1vZL-sO3S1cf9jhZlN2j7xfH868dBIF3k/view?usp=drivesdk"
+    },
+    hasArchitecture: true,
+    archType: "shelfbound"
+  },
   {
     id: "glow-graph",
     title: "GlowGraph — Skincare Compatibility Platform",
@@ -221,30 +306,10 @@ export const projects = [
     badge: "Final Year Capstone & Published Paper"
   },
   {
-    id: "shelfbound",
-    title: "ShelfBound — Full-Stack Bookstore Platform",
-    subtitle: "Production-Grade E-Commerce Application with Relational Architecture",
-    category: "Full-Stack Web Application",
-    featured: false,
-    description: "A complete online bookstore application built with Jakarta Servlets/JSP, Spring Boot, Hibernate, and MySQL. Supports interactive customer shopping workflows and a dedicated administration portal.",
-    highlights: [
-      "Architected with 47 Java classes, 21 JSP pages, 11 REST endpoints, and a normalized 9-table MySQL schema.",
-      "Implemented AJAX/Fetch workflows for instant live cart and wishlist updates without full-page reloads.",
-      "Enforced parameterized JDBC PreparedStatements to eliminate SQL injection vulnerabilities.",
-      "Includes real-time order tracking and automated WELCOME20 coupon engine."
-    ],
-    stack: ["Java", "Spring Boot", "Hibernate", "Jakarta Servlets/JSP", "MySQL", "AJAX/Fetch", "BCrypt"],
-    links: {
-      github: "https://github.com/rajyalakshmi-6/ShelfBound",
-      video: "https://drive.google.com/file/d/1vZL-sO3S1cf9jhZlN2j7xfH868dBIF3k/view?usp=drivesdk"
-    },
-    badge: "47 Java Classes • Demo Video"
-  },
-  {
     id: "upi-banking",
     title: "UPI Fund Transfer Engine (Real-Time Banking System)",
     subtitle: "Peer-to-Peer Financial Transaction Simulator with ACID Compliance",
-    category: "Core Java & Financial Backend",
+    category: "Backend & Enterprise APIs",
     featured: false,
     description: "A peer-to-peer banking simulator focused on atomic money transfers. Utilizes JDBC transaction control with commit, rollback, and savepoint mechanisms to guarantee data integrity.",
     highlights: [
@@ -550,15 +615,17 @@ export const careerRoadmap = [
     status: "Production Ready",
     type: "Full-Stack Systems",
     iconName: "Layers",
-    summary: "Engineered diverse production systems spanning graph databases, cryptographic JWT security, and ACID-compliant transaction simulators.",
-    skills: ["Spring Boot", "Neo4j", "Cypher", "Spring Security 6", "JWT", "MySQL", "ACID Transactions", "Render"],
+    summary: "Engineered diverse production systems spanning full-scale e-commerce on Docker & Tomcat 10, graph databases, cryptographic JWT security, and ACID-compliant transaction simulators.",
+    skills: ["Java", "Docker", "Apache Tomcat 10", "Render Cloud", "Aiven MySQL 8.4", "Spring Boot", "Neo4j", "BCrypt", "Brevo API"],
     highlights: [
+      "ShelfBound: 47 Java classes, 21 JSP pages, 9-table schema, Brevo email OTP, and live on Render.",
       "GlowGraph: Deployed skincare compatibility engine on Render using Neo4j graph traversal.",
       "Employee Leave System: RBAC, cryptographic JWT tokens, and Postman test automation.",
-      "ShelfBound: 47 Java classes, 21 JSP pages, 9-table schema, and real-time coupon engine.",
       "UPI Banking Simulator: Guaranteed atomic transaction control with JDBC commit/rollback."
     ],
     deliverables: [
+      { name: "ShelfBound Live Application", link: "https://shelfbound-bookstore.onrender.com/" },
+      { name: "ShelfBound GitHub Code", link: "https://github.com/rajyalakshmi-6/ShelfBound" },
       { name: "GlowGraph Live Demo", link: "https://glow-graph.onrender.com/" },
       { name: "GlowGraph Walkthrough Video", link: "https://drive.google.com/file/d/1WQ765zAf-sAsk5VPZbSGpdwFppDv6_-i/view?usp=drivesdk" },
       { name: "Leave Management Docs", link: "https://drive.google.com/file/d/17Ib7ej7e8AsvdWfyy_P0JbxVSnuc-ojO/view?usp=drivesdk" }

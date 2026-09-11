@@ -6,14 +6,14 @@ export default function ProjectArchitectureSvg({ type }) {
 
   const architectures = {
     shelfbound: {
-      title: "ShelfBound Layered MVC + DAO Pipeline",
+      title: "ShelfBound Layered MVC + DAO Pipeline (Docker + Tomcat 10 on Render)",
       nodes: [
-        { id: 'client', name: 'Browser / Client', role: 'Frontend UI', tech: 'AJAX / Fetch API, JSP Pages', detail: 'Executes asynchronous cart additions, wishlist mutations, and search queries without page reloads.', x: 45, y: 70 },
-        { id: 'security', name: 'Auth & Filter', role: 'Security Layer', tech: 'BCrypt & Session Management', detail: 'Enforces role isolation (Admin vs Customer), hashes credentials via BCrypt, and validates session state.', x: 155, y: 70 },
-        { id: 'controller', name: 'Controllers', role: 'Presentation MVC', tech: 'Jakarta Servlets & DTOs', detail: 'Dispatches 11 REST/JSP endpoints, decodes HTTP payloads, and validates incoming form fields.', x: 265, y: 70 },
-        { id: 'service', name: 'Service / DAO', role: 'Business Engine', tech: 'DAO Pattern & Business Rules', detail: 'Houses 47 Java classes, the WELCOME20 coupon engine, real-time inventory checks, and 7-day return policy state machine.', x: 375, y: 70 },
-        { id: 'orm', name: 'Persistence Layer', role: 'Data Access', tech: 'Hibernate & PreparedStatements', detail: 'Executes parameterized JDBC queries to prevent SQL injection and manages entity lifecycle states.', x: 485, y: 70 },
-        { id: 'database', name: 'Relational Store', role: 'Storage', tech: 'MySQL (9-Table Schema)', detail: 'Normalized relational database tracking users, roles, books, categories, orders, order_items, cart, wishlist, and reviews.', x: 595, y: 70 }
+        { id: 'client', name: 'Browser / Client', role: 'Frontend UI', tech: 'AJAX / Fetch API & Modern JS', detail: 'Executes zero-reload keyword catalog search, dynamic cart/wishlist mutations, and live WELCOME20 promo engine with spend thresholds.', x: 45, y: 70 },
+        { id: 'security', name: 'Auth & Filter', role: 'Security & OTP', tech: 'BCrypt (12 Salt Rounds) & Brevo API', detail: 'Dispatches 6-digit email OTP via Brevo API with 5-minute countdown, enforces BCrypt auto-upgrade, and isolates Customer vs Admin role filters.', x: 155, y: 70 },
+        { id: 'controller', name: 'Controllers', role: 'Presentation MVC', tech: 'Jakarta Servlets & Filters', detail: 'Dispatches HTTP requests on Apache Tomcat 10 inside Docker container, manages HttpSessions, and routes between Customer and Admin portals.', x: 265, y: 70 },
+        { id: 'service', name: 'Service / DAO', role: 'Business Engine', tech: 'DAO Pattern & 47 Java Classes', detail: 'Houses 47 Java classes, promotional coupon logic, inventory validation, and 4-stage order fulfillment state machine.', x: 375, y: 70 },
+        { id: 'orm', name: 'Persistence Layer', role: 'Data Access', tech: 'Raw JDBC & Connection Pooling', detail: '100% of database queries executed via parameterized PreparedStatement with connection pooling, eliminating SQL injection vulnerabilities.', x: 485, y: 70 },
+        { id: 'database', name: 'Relational Store', role: 'Storage & Cloud', tech: 'MySQL 8.4 (Aiven Cloud SSL)', detail: 'Normalized 9-table (3NF) relational database hosted on Aiven Cloud with SSL encryption, managing referential integrity across 2 portals.', x: 595, y: 70 }
       ]
     },
     'leave-system': {
