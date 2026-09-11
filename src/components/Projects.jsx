@@ -335,7 +335,7 @@ export default function Projects() {
                     </a>
                   )}
 
-                  {/* ISJEM Research Paper Download */}
+                  {/* ISJEM Published Research Paper */}
                   {project.links.paper && (
                     <a
                       href={project.links.paper}
@@ -344,7 +344,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#58A6FF] text-[#0B0F14] hover:bg-[#4791e6] text-xs font-bold hover:scale-105 transition-all duration-200 shadow-md"
                     >
                       <FileText className="w-3.5 h-3.5" />
-                      <span>Download Research Paper (ISJEM)</span>
+                      <span>View Published Research</span>
                     </a>
                   )}
 
