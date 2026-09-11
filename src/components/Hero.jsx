@@ -127,6 +127,16 @@ export default function Hero() {
             </a>
             <span>•</span>
             <a
+              href={personalInfo.profiles.hackerrank}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00EA64] flex items-center gap-1 font-medium transition-colors"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#00EA64]" />
+              HackerRank
+            </a>
+            <span>•</span>
+            <a
               href={personalInfo.resumeDrive}
               target="_blank"
               rel="noopener noreferrer"

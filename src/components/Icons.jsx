@@ -55,3 +55,18 @@ export function LeetCode({ className = "w-4 h-4", ...props }) {
     </svg>
   );
 }
+
+export function HackerRank({ className = "w-4 h-4", ...props }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="currentColor"
+      className={className}
+      {...props}
+    >
+      <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm3.92 16.5H13.8v-3.77h-3.6v3.77H8.08V7.5h2.12v3.73h3.6V7.5h2.12z" />
+    </svg>
+  );
+}

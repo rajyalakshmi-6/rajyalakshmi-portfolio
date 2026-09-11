@@ -33,6 +33,7 @@ export default function Roadmap() {
       case 'FileText': return FileText;
       case 'Layers': return Layers;
       case 'Sparkles': return Sparkles;
+      case 'Award': return Award;
       default: return Code2;
     }
   };

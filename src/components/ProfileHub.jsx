@@ -1,7 +1,7 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
 import { ExternalLink, Award, CheckCircle2, ShieldCheck, Sparkles, Globe, Code2 } from 'lucide-react';
-import { Github, Linkedin, LeetCode } from './Icons';
+import { Github, Linkedin, LeetCode, HackerRank } from './Icons';
 import { SkillLogos } from './SkillLogos';
 
 export default function ProfileHub() {
@@ -73,6 +73,27 @@ export default function ProfileHub() {
                 LeetCode
               </div>
               <div className="text-[11px] text-[#8B96A5] mt-0.5">Algorithms & DSA</div>
+            </div>
+          </a>
+
+          {/* HackerRank (Beside LeetCode) */}
+          <a
+            href={profiles.hackerrank}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-2xl border border-[#2A3441] bg-[#0B0F14] hover:border-[#00EA64] hover:shadow-[0_0_20px_rgba(0,234,100,0.2)] hover:-translate-y-1 transition-all duration-200 group flex flex-col justify-between"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="w-8 h-8 rounded-lg bg-[#00EA64]/10 border border-[#00EA64]/30 flex items-center justify-center text-[#00EA64]">
+                <HackerRank className="w-4 h-4" />
+              </div>
+              <ExternalLink className="w-3.5 h-3.5 text-[#8B96A5] group-hover:text-[#00EA64] transition-colors" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-[#E6EDF3] group-hover:text-[#00EA64] transition-colors">
+                HackerRank
+              </div>
+              <div className="text-[11px] text-[#8B96A5] mt-0.5">Problem Solving & Logic</div>
             </div>
           </a>
 
@@ -157,27 +178,6 @@ export default function ProfileHub() {
                 Google Devs
               </div>
               <div className="text-[11px] text-[#8B96A5] mt-0.5">Official Member</div>
-            </div>
-          </a>
-
-          {/* HackerRank */}
-          <a
-            href={profiles.hackerrank}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-2xl border border-[#2A3441] bg-[#0B0F14] hover:border-[#3ECF8E] hover:shadow-[0_0_20px_rgba(62,207,142,0.2)] hover:-translate-y-1 transition-all duration-200 group flex flex-col justify-between"
-          >
-            <div className="flex items-center justify-between mb-3">
-              <div className="w-8 h-8 rounded-lg bg-[#3ECF8E]/10 border border-[#3ECF8E]/30 flex items-center justify-center text-[#3ECF8E]">
-                <Code2 className="w-4 h-4" />
-              </div>
-              <ExternalLink className="w-3.5 h-3.5 text-[#8B96A5] group-hover:text-[#3ECF8E] transition-colors" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#E6EDF3] group-hover:text-[#3ECF8E] transition-colors">
-                HackerRank
-              </div>
-              <div className="text-[11px] text-[#8B96A5] mt-0.5">Problem Solving</div>
             </div>
           </a>
 

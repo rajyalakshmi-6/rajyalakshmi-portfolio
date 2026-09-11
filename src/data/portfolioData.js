@@ -388,7 +388,7 @@ export const certificationSections = [
         issuer: "Wipro TalentNext",
         year: "2024",
         score: "Certified Graduate",
-        description: "Rigorous industry readiness training covering software engineering best practices, object-oriented design, and problem solving.",
+        description: "Hands-on industry readiness training covering software engineering best practices, object-oriented design, and problem solving.",
         link: "https://drive.google.com/file/d/1-xxTENNoeDQyokMTKhDEkDJGRgssvoCX/view?usp=drivesdk",
         linkText: "View Wipro Certificate"
       },
@@ -540,7 +540,7 @@ export const careerRoadmap = [
   {
     step: 1,
     phase: "Stage 01",
-    title: "ECE Rigor & Analytical Engineering Foundation",
+    title: "Engineering Foundation & Systems Mindset",
     entity: "AITS Tirupati",
     period: "Sep 2022 – Apr 2026",
     badge: "9.47 CGPA • Top 4 in Dept",
@@ -634,25 +634,27 @@ export const careerRoadmap = [
   {
     step: 5,
     phase: "Stage 05",
-    title: "Agentic AI Productivity & Enterprise Deployment",
-    entity: "Industry Ecosystem & Developer Platforms",
-    period: "Present & 2026 Ahead",
-    badge: "Double Champion 2025/2026 • 97.8%ile",
-    status: "Ready for Deployment",
-    type: "Industry Readiness",
-    iconName: "Sparkles",
-    summary: "Leveraging cutting-edge generative AI tooling and agentic workflows alongside solid Java backend engineering to deliver high-velocity, production-grade solutions.",
-    skills: ["Salesforce Agentforce", "LeetCode", "Claude", "Antigravity", "Gemini", "NotebookLM", "Prompt Engineering"],
+    title: "Competitive Mindset & Problem-Solving Excellence",
+    entity: "National Competitions & Coding Platforms",
+    period: "2024 – Present",
+    badge: "AIR #409 (97.8%ile) • NPTEL Top 5% Elite",
+    status: "Verified Competitive Honors",
+    type: "Competitive Excellence",
+    iconName: "Award",
+    summary: "Demonstrating consistent problem solving, national percentile honors, and continuous coding practice across competitive platforms and cloud ecosystems.",
+    skills: ["HackerRank", "LeetCode", "Data Structures & Algorithms", "Salesforce Trailhead", "Java Problem Solving", "Analytical Thinking"],
     highlights: [
-      "Salesforce 2025 & 2026 Champion with 40 badges, 13,800+ points on Trailhead.",
-      "YOUNGTURKS'25 National AIR #409 (97.8th percentile) by Naukri Campus.",
-      "Active problem solver on LeetCode & HackerRank.",
-      "Targeting Full-Stack Developer and Associate Software Developer opportunities."
+      "YOUNGTURKS'25 by Naukri Campus: Secured National AIR #409 (97.8th percentile) among thousands of engineering participants nationwide.",
+      "Top 5% Elite in NPTEL (IIT Kharagpur): Awarded Elite certification in Modern Radar Systems with a top 5% national ranking.",
+      "Active Problem Solver on HackerRank & LeetCode: Continuous practice in algorithms, OOP design patterns, and database SQL challenges.",
+      "Salesforce 2025 & 2026 Champion: Trailhead Adventurer with 40 badges and 13,800+ points across cloud and automation modules."
     ],
     deliverables: [
-      { name: "Salesforce Trailhead Profile", link: "https://www.salesforce.com/trailblazer/ai942ixku7q5ktnrig" },
-      { name: "YoungTurks Merit Certificate", link: "https://drive.google.com/file/d/16uxdm7xXsUFUD0eXPBdAyxdGU8yirSPC/view?usp=drivesdk" },
-      { name: "LeetCode Profile", link: "https://leetcode.com/u/D-Rajyalakshmi/" }
+      { name: "HackerRank Profile", link: "https://www.hackerrank.com/profile/devaralarajyala1" },
+      { name: "LeetCode Profile", link: "https://leetcode.com/u/D-Rajyalakshmi/" },
+      { name: "YoungTurks Merit Certificate (Drive)", link: "https://drive.google.com/file/d/16uxdm7xXsUFUD0eXPBdAyxdGU8yirSPC/view?usp=drivesdk" },
+      { name: "NPTEL Top 5% IIT Kharagpur Certificate", link: "https://drive.google.com/file/d/1jFSRYY_dDTC9ar9sdazWg56rKVrMPtmz/view?usp=drivesdk" },
+      { name: "Salesforce Trailhead Profile", link: "https://www.salesforce.com/trailblazer/ai942ixku7q5ktnrig" }
     ]
   }
 ];

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Download, Menu, X, ArrowUpRight, FileText, ChevronDown, ExternalLink } from 'lucide-react';
-import { Github, Linkedin, LeetCode } from './Icons';
+import { Github, Linkedin, LeetCode, HackerRank } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Navbar() {
@@ -87,6 +87,15 @@ export default function Navbar() {
             className="p-2.5 rounded-xl border border-[#2A3441] bg-[#121821] text-[#8B96A5] hover:text-[#FFA116] hover:border-[#FFA116]/60 transition-all duration-200 shadow-sm"
           >
             <LeetCode className="w-4 h-4" />
+          </a>
+          <a
+            href={personalInfo.profiles.hackerrank}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="HackerRank Profile"
+            className="p-2.5 rounded-xl border border-[#2A3441] bg-[#121821] text-[#8B96A5] hover:text-[#00EA64] hover:border-[#00EA64]/60 transition-all duration-200 shadow-sm"
+          >
+            <HackerRank className="w-4 h-4" />
           </a>
           <a
             href={personalInfo.profiles.github}
@@ -245,6 +254,15 @@ export default function Navbar() {
               className="p-3 rounded-xl border border-[#2A3441] bg-[#121821] text-[#FFA116]"
             >
               <LeetCode className="w-4 h-4" />
+            </a>
+            <a
+              href={personalInfo.profiles.hackerrank}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HackerRank Profile"
+              className="p-3 rounded-xl border border-[#2A3441] bg-[#121821] text-[#00EA64]"
+            >
+              <HackerRank className="w-4 h-4" />
             </a>
             <a
               href={personalInfo.profiles.github}
